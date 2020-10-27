@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import usePeer from '../../common/usePeer'
-import verify from '../../common/verify'
+import usePeer from '../../common/hooks/usePeer'
+import validUrl from '../../common/hooks/validUrl'
 
 import QRCode from 'components/qrcode'
 
@@ -10,7 +10,7 @@ import styles from 'styles/pages/index/index.module.scss'
 const REDIRECT = false
 
 const dataReceived = (data) => {
-  if (!verify(data)) {
+  if (data.key !== process.env.NEXT_PUBLIC_PEER_KEY || !validUrl(data.url)) {
     console.warn('provided data not valid', data)
     return
   }
@@ -42,7 +42,6 @@ const Home = () => {
       <img src="https://source.unsplash.com/random/1920x1080?landscape" className={styles.bg} alt="" width="1920" height="1080" loading="lazy" />
       <main className={styles.main}>
         <QRCode value={qrValue} />
-        <input type="text" value={qrValue} onChange={e => setQrValue(e.target.value)} />
       </main>
     </div>
   )

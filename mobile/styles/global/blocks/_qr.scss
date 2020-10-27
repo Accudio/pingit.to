@@ -1,0 +1,19 @@
+.qr {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
+  &__back {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1;
+  }
+
+  &__el {
+    margin: auto 0;
+    width: 100%;
+  }
+}
