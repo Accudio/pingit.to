@@ -5,12 +5,17 @@
     "dev:desktop": "cd desktop && next -p 3000",
     "build:desktop": "cd desktop && next build && next export -o build",
     "start:desktop": "cd desktop && cross-env NODE_ENV=production next start",
+    "deploy:desktop": "run-s build:desktop surge:desktop",
+    "surge:desktop": "surge desktop/build/ https://qrshare-desktop.surge.sh",
     "dev:mobile": "cd mobile && next -p 3001",
     "build:mobile": "cd mobile && next build && next export -o build",
     "start:mobile": "cd mobile && cross-env NODE_ENV=production next start",
+    "deploy:mobile": "run-s build:mobile surge:mobile",
+    "surge:mobile": "surge mobile/build/ https://qrshare-mobile.surge.sh",
     "dev": "run-p dev:*",
     "build": "run-p build:*",
-    "start": "run-p start:*"
+    "start": "run-p start:*",
+    "deploy": "run-p deploy:*"
   },
   "devDependencies": {
     "@prefresh/next": "^1.3.0",

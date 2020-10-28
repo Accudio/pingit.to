@@ -16,8 +16,9 @@ export default function usePeer() {
   useEffect(() => {
     import('peerjs').then(() => {
       const peer = myPeer ? myPeer : new Peer({
-        host: 'localhost',
-        port: 9000
+        host: process.env.NEXT_PUBLIC_PEER_HOST,
+        port: process.env.NEXT_PUBLIC_PEER_PORT,
+        secure: true
       })
 
       peer.on('open', () => {

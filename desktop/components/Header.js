@@ -8,12 +8,12 @@ export default function Header() {
 
   const items = [
     {
-      title: 'Send',
+      title: 'Receive',
       path: '/'
     },
     {
-      title: 'Receive',
-      path: '/receive'
+      title: 'Send',
+      path: '/send'
     }
   ]
 

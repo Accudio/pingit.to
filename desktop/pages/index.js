@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react'
 import usePeer from '../../common/hooks/usePeer'
 import validUrl from '../../common/hooks/validUrl'
 
-import QRCode from 'components/qrcode'
+import QRCode from 'components/QRCode'
 
-import styles from 'styles/pages/index/index.module.scss'
+import styles from 'styles/pages/index.module.scss'
 
-const REDIRECT = false
+const REDIRECT = true
 
 const dataReceived = (data) => {
   if (data.key !== process.env.NEXT_PUBLIC_PEER_KEY || !validUrl(data.url)) {
@@ -38,13 +38,10 @@ const Home = () => {
   })
 
   return (
-    <div className={styles.app}>
-      <img src="https://source.unsplash.com/random/1920x1080?landscape" className={styles.bg} alt="" width="1920" height="1080" loading="lazy" />
-      <main className={styles.main}>
-        <QRCode value={qrValue} />
-      </main>
-    </div>
-  )
+    <main>
+      <QRCode value={qrValue} />
+    </main>
+)
 }
 
 export default Home
