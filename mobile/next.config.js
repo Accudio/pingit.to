@@ -12,6 +12,8 @@ const config = {
   },
 
   webpack(config, { dev, isServer }) {
+    config.resolve.symlinks = false
+
     const splitChunks = config.optimization && config.optimization.splitChunks
     if (splitChunks) {
       const cacheGroups = splitChunks.cacheGroups

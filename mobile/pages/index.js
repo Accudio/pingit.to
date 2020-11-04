@@ -36,7 +36,7 @@ const Send = () => {
   }
 
   return (
-    <main className="app">
+    <>
       { !isUrlSet &&
         <form
           className={styles.form}
@@ -64,7 +64,7 @@ const Send = () => {
           />
         </div>
       }
-    </main>
+    </>
   )
 }
 

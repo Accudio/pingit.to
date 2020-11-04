@@ -20,12 +20,12 @@ const Receive = () => {
   }
 
   return (
-    <main className="app">
+    <>
       <QRReader
         onScan={qrScan}
         className="qr"
       />
-    </main>
+    </>
   )
 }
 

@@ -10,19 +10,42 @@
 }
 
 .link, .button {
+  align-items: center;
   color: #000;
+  display: flex;
   flex: 1 0 0;
   font-size: 1.5rem;
   font-weight: 900;
+  justify-content: center;
   padding: .5rem 1rem;
   position: relative;
 }
 
 .link {
+  position: relative;
   text-decoration: none;
 
-  &--active {
-    color: #00f;
+  &::before {
+    $size: 1.75rem;
+
+    background: rgba(#00f, .1);
+    border-radius: 50%;
+    content: '';
+    height: $size;
+    left: calc(50% - #{$size / 2});
+    opacity: 0;
+    position: absolute;
+    top: calc(50% - #{$size / 2});
+    transition: all .1s;
+    width: $size;
+  }
+
+  &--active::before {
+    opacity: 1;
+  }
+
+  > * {
+    position: relative;
   }
 }
 

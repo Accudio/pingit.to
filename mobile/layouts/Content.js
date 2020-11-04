@@ -1,11 +1,12 @@
 import Nav from 'components/Nav.js'
 
 import layoutStyles from 'styles/layouts/all.module.scss'
+import contentStyles from 'styles/layouts/content.module.scss'
 
-const DefaultLayout = ({ children }) => {
+const ContentLayout = ({ children }) => {
   return (
     <div className={layoutStyles.wrap}>
-      <main className="app">
+      <main className={`app ${contentStyles.main}`}>
         {children}
       </main>
       <Nav />
@@ -13,4 +14,4 @@ const DefaultLayout = ({ children }) => {
   )
 }
 
-export default DefaultLayout
+export default ContentLayout

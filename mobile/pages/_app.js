@@ -1,3 +1,5 @@
+import Head from 'components/Head'
+
 import DefaultLayout from 'layouts/Default.js'
 
 import '@common/styles/global.scss'
@@ -7,9 +9,12 @@ function MyApp({ Component, pageProps }) {
   const Layout = Component.layout || DefaultLayout
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 
