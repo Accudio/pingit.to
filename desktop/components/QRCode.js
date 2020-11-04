@@ -1,6 +1,6 @@
 import QrCodeReact from 'qrcode.react'
 
-export default function User({value}) {
+export default function User({ value }) {
   if (!value) return ''
 
   return (

@@ -5,12 +5,12 @@ import validUrl from '../../common/hooks/validUrl'
 
 import QRCode from 'components/QRCode'
 
-import styles from 'styles/pages/index.module.scss'
+// import styles from 'styles/pages/index.module.scss'
 
 const REDIRECT = true
 
 const dataReceived = (data) => {
-  if (data.key !== process.env.NEXT_PUBLIC_PEER_KEY || !validUrl(data.url)) {
+  if (data.key !== 'qr_share' || !validUrl(data.url)) {
     console.warn('provided data not valid', data)
     return
   }
@@ -41,7 +41,7 @@ const Home = () => {
     <main>
       <QRCode value={qrValue} />
     </main>
-)
+  )
 }
 
 export default Home

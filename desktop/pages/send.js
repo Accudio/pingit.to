@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import validUrl from '../../common/hooks/validUrl'
 
@@ -21,7 +21,7 @@ const Send = () => {
               setIsUrlSet(true)
             }
           }}>
-          <label for="url" className={styles.label}>Enter URL</label>
+          <label htmlFor="url" className={styles.label}>Enter URL</label>
           <input type="text" id="url" className={styles.input} value={sendUrl} onChange={e => setSendUrl(e.target.value)} />
           <button type="submit">Generate</button>
         </form>

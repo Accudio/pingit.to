@@ -1,11 +1,10 @@
-import Header from 'components/Header.js'
+import Nav from 'components/Nav.js'
 
 const DefaultLayout = ({ children }) => {
-
   return (
     <div className="layout layout--default">
-      <Header />
       {children}
+      <Nav />
     </div>
   )
 }

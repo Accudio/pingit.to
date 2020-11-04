@@ -20,17 +20,17 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        { items.map((item) => {
+        { items.map((item, i) => {
           let className = styles.link
           if (router.pathname === item.path) className += (' ' + styles['link--active'])
           return (
-            <Link href={item.path}>
+            <Link href={item.path} key={i}>
               <a className={className}>
                 {item.title}
               </a>
             </Link>
           )
-          }) }
+        }) }
       </nav>
     </header>
   )

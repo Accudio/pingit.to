@@ -1,0 +1,33 @@
+.header {
+  background: #fff;
+}
+
+.nav {
+  box-shadow: 1px 1px 20px 0 rgba(#000, .5);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.link, .button {
+  color: #000;
+  flex: 1 0 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: .5rem 1rem;
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+
+  &--active {
+    color: #00f;
+  }
+}
+
+.button {
+  appearance: none;
+  background: none;
+  border: 0;
+}

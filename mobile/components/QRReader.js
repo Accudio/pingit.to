@@ -5,7 +5,7 @@ const QrReader = dynamic(
   { ssr: false }
 )
 
-export default function User({onScan, className}) {
+export default function User({ onScan, className }) {
   if (!process.browser) return ''
 
   const onError = (err) => {

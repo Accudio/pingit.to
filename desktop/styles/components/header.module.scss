@@ -6,14 +6,14 @@
   box-shadow: 1px 1px 20px 0 rgba(#000, .5);
   display: flex;
   flex-wrap: wrap;
-  text-align: center
+  text-align: center;
 }
 
 .link {
   color: #000;
+  flex: 1 0 0;
   font-size: 1.5rem;
   font-weight: 900;
-  flex: 1 0 0;
   min-width: min-content;
   overflow: hidden;
   padding: .5rem 1rem;
@@ -21,15 +21,15 @@
   text-decoration: none;
 
   &::before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    bottom: 0;
-    width: 100%;
-    left: 0;
     background: #000;
+    bottom: 0;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
     transform: translateY(100%);
     transition: all .1s;
+    width: 100%;
   }
 
   &--active::before {

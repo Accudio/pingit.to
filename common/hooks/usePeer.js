@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function usePeer() {
   const [ myPeer, setPeer ] = useState(null)
@@ -14,8 +14,8 @@ export default function usePeer() {
   }
 
   useEffect(() => {
-    import('peerjs').then(() => {
-      const peer = myPeer ? myPeer : new Peer({
+    import('peerjs').then(({ peerjs }) => {
+      const peer = myPeer || new peerjs.Peer({
         host: process.env.NEXT_PUBLIC_PEER_HOST,
         port: process.env.NEXT_PUBLIC_PEER_PORT,
         secure: true

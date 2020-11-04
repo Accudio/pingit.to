@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
-
 import validUrl from '../../common/hooks/validUrl.js'
 
 import QRReader from 'components/QRReader.js'
 
-import styles from 'styles/pages/receive.module.scss'
+// import styles from 'styles/pages/receive.module.scss'
 
 const REDIRECT = true
 
