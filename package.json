@@ -1,7 +1,15 @@
 {
-  "name": "nextjs-preact-demo",
-  "version": "1.0.0",
+  "name": "qr-share",
+  "version": "0.1.0",
+  "description": "Web application allowing easy sending/receiving of URLs using QR Codes",
+  "private": true,
+  "author": "Alistair Shepherd <alistair@accudio.com>",
+  "license": "UNLICENSED",
   "scripts": {
+    "postinstall": "run-p symlink",
+    "symlink": "run-p symlink:*",
+    "symlink:desktop": "symlink-dir common/ desktop/@common",
+    "symlink:mobile": "symlink-dir common/ mobile/@common",
     "dev:desktop": "cd desktop && next -p 3000",
     "build:desktop": "cd desktop && next build && next export -o build",
     "start:desktop": "cd desktop && cross-env NODE_ENV=production next start",
@@ -12,21 +20,17 @@
     "start:mobile": "cd mobile && cross-env NODE_ENV=production next start",
     "deploy:mobile": "run-s build:mobile surge:mobile",
     "surge:mobile": "surge mobile/build/ https://qrshare-mobile.surge.sh",
-    "dev": "run-p dev:*",
-    "build": "run-p build:*",
-    "start": "run-p start:*",
-    "deploy": "run-p deploy:*",
+    "dev": "run-p --print-label dev:*",
+    "build": "run-p --print-label build:*",
+    "start": "run-p --print-label start:*",
+    "deploy": "run-p --print-label deploy:*",
     "update:cssdb": "npx browserslist@latest --update-db",
     "lint": "run-p lint:*",
     "lint:js": "eslint --ignore-path .gitignore \"**/*.js\"",
     "lint:css": "stylelint --ignore-path .gitignore \"**/*.scss\"",
     "fix": "run-p fix:*",
     "fix:js": "eslint --ignore-path .gitignore \"**/*.js\" --fix",
-    "fix:css": "stylelint --ignore-path .gitignore \"**/*.scss\" --fix",
-    "postinstall": "link-module-alias"
-  },
-  "_moduleAliases": {
-    "~common": "./common/"
+    "fix:css": "stylelint --ignore-path .gitignore \"**/*.scss\" --fix"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
@@ -37,7 +41,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-standard": "^4.0.1",
-    "link-module-alias": "^1.2.0",
     "stylelint": "^13.7.2",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-scss": "^3.18.0"
@@ -55,7 +58,7 @@
     "react-dom": "npm:@preact/compat@^0.0.3",
     "react-qr-reader": "^2.2.1",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2",
-    "sass": "^1.27.0"
-  },
-  "license": "UNLICENSED"
+    "sass": "^1.27.0",
+    "symlink-dir": "^4.1.0"
+  }
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-import usePeer from '../../common/hooks/usePeer'
-import validUrl from '../../common/hooks/validUrl.js'
+import { usePeer, validUrl } from '@common'
 
 import QRReader from 'components/QRReader.js'
 

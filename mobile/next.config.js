@@ -1,5 +1,5 @@
-const withPrefresh = require('@prefresh/next')
 const preact = require('preact')
+const withPrefresh = require('@prefresh/next')
 
 const config = {
   experimental: {

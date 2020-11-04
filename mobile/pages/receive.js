@@ -1,4 +1,4 @@
-import validUrl from '../../common/hooks/validUrl.js'
+import { validUrl } from '@common'
 
 import QRReader from 'components/QRReader.js'
 

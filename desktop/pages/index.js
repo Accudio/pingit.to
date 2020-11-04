@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import usePeer from '../../common/hooks/usePeer'
-import validUrl from '../../common/hooks/validUrl'
+import { usePeer, validUrl } from '@common'
 
 import QRCode from 'components/QRCode'
 

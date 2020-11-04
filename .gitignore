@@ -1,5 +1,7 @@
 .next
 node_modules
 
+@common
+
 /desktop/build
 /mobile/build
