@@ -24,7 +24,7 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <a href="https://pingit-m.surge.sh/">
+          <a href="https://m.pingit.to/">
             Mobile Client
             <ExternalIcon className="inline" />
           </a>
