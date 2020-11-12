@@ -1,17 +1,20 @@
+@import '@common/styles/config';
+
 .header {
-  background: #fff;
+  background: get-colour('white');
 }
 
 .nav {
-  box-shadow: 1px 1px 20px 0 rgba(#000, .5);
+  box-shadow: 1px 1px 20px 0 rgba(get-colour('black'), .5);
   display: flex;
   flex-wrap: wrap;
+  height: 3rem;
   text-align: center;
 }
 
 .link, .button {
   align-items: center;
-  color: #000;
+  color: get-colour('black');
   display: flex;
   flex: 1 0 0;
   font-size: 1.5rem;
@@ -28,7 +31,7 @@
   &::before {
     $size: 1.75rem;
 
-    background: rgba(#00f, .1);
+    background: rgba(get-colour('primary'), .25);
     border-radius: 50%;
     content: '';
     height: $size;

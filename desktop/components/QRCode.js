@@ -7,7 +7,7 @@ export default function User({ value }) {
     <QrCodeReact
       value={value}
       size={400}
-      includeMargin={true}
+      includeMargin={false}
     />
   )
 }

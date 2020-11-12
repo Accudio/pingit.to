@@ -1,7 +1,15 @@
 .next
 node_modules
 
-@common
-
+# builds
 /desktop/build
 /mobile/build
+
+# symlinks for common lib
+@common/
+
+# service worker generation
+**/public/workbox-*.js
+**/public/sw.js
+**/public/worker-*.js
+**/public/*.map

@@ -1,2 +1,15 @@
+// import configuration, functions and output gorko
+$outputTokenCSS: true; // stylelint-disable-line scss/dollar-variable-pattern
+@import '@common/styles/config';
+
+// css reset from Andy Bell
+@import '@common/styles/reset';
+
+@import 'base';
+
+// utilities
+@import '@common/styles/utilities/*';
+
 // blocks
+@import '@common/styles/blocks/*';
 @import 'blocks/*';

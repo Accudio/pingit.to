@@ -1,5 +1,5 @@
-import usePeer from './hooks/usePeer'
-import validUrl from './hooks/validUrl'
+import usePeer from './util/usePeer'
+import validUrl from './util/validUrl'
 
 export {
   usePeer,

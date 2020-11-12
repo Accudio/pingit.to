@@ -1,16 +1,15 @@
-import Nav from 'components/Nav.js'
+import Head from 'components/Head'
 
-import layoutStyles from 'styles/layouts/all.module.scss'
 import contentStyles from 'styles/layouts/content.module.scss'
 
-const ContentLayout = ({ children }) => {
+const ContentLayout = ({ children, meta }) => {
   return (
-    <div className={layoutStyles.wrap}>
-      <main className={`app ${contentStyles.main}`}>
+    <>
+      <Head meta={meta} />
+      <main className={`app flow ${contentStyles.main}`} aria-live="polite">
         {children}
       </main>
-      <Nav />
-    </div>
+    </>
   )
 }
 

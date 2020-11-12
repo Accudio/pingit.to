@@ -1,0 +1,54 @@
+@import '@common/styles/config';
+
+.wrap {
+  padding: 0 1rem;
+}
+
+.code {
+  max-width: 100%;
+
+  &::before {
+    content: '';
+    float: left;
+    height: 0;
+    margin-left: -1px;
+    padding-top: 100%;
+    width: 1px;
+  }
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  canvas {
+    display: block;
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+.form {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.input {
+  width: 100%;
+}
+
+.button {
+  appearance: none;
+  margin: 0 .2rem;
+}
+
+.buttonActive {
+  background: get-colour('primary-shade');
+}

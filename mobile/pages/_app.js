@@ -1,20 +1,49 @@
-import Head from 'components/Head'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
-import DefaultLayout from 'layouts/Default.js'
-
-import '@common/styles/global.scss'
 import 'styles/global/global.scss'
 
+import styles from 'styles/layouts/all.module.scss'
+
+import Nav from 'components/Nav.js'
+
 function MyApp({ Component, pageProps }) {
-  const Layout = Component.layout || DefaultLayout
+  const [isOnline, setIsOnline] = useState(true)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'ononline' in window && 'onoffline' in window) {
+      setIsOnline(window.navigator.onLine)
+      if (!window.ononline) {
+        window.addEventListener('online', () => {
+          setIsOnline(true)
+        })
+      }
+      if (!window.onoffline) {
+        window.addEventListener('offline', () => {
+          setIsOnline(false)
+        })
+      }
+    }
+  }, [])
+
+  const router = useRouter()
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined && isOnline) {
+      // skip index route, because it's already cached under `start-url` caching object
+      if (router.route !== '/') {
+        const wb = window.workbox
+        wb.active.then(worker => {
+          wb.messageSW({ action: 'CACHE_NEW_ROUTE' })
+        })
+      }
+    }
+  }, [isOnline, router.route])
 
   return (
-    <>
-      <Head />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+    <div className={styles.wrap}>
+      <Component {...pageProps} />
+      <Nav />
+    </div>
   )
 }
 

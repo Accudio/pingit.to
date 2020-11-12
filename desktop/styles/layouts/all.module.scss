@@ -1,0 +1,54 @@
+@import '@common/styles/config';
+
+.body {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.wrap {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.main {
+  flex: 1 0 0;
+  position: relative;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-top: get-size('major');
+}
+
+.page {
+  background: get-colour('white');
+  border-radius: .5rem .5rem 0 0;
+  box-shadow: 0 0 .5rem 0 rgba(get-color('black'), .2);
+  flex: 1 0 auto;
+  padding: get-size('500') get-size('600') get-size('900');
+  position: relative;
+}
+
+.close {
+  align-items: center;
+  background: get-colour('white');
+  border: 2px solid get-colour('dark');
+  border-radius: 50%;
+  color: get-color('dark');
+  display: flex;
+  font-size: 1.25rem;
+  height: 2rem;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(30%, -30%);
+  width: 2rem;
+}

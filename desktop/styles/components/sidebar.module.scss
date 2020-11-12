@@ -1,0 +1,12 @@
+@import '@common/styles/config';
+
+.sidebar {
+  background: get-color('white');
+  box-shadow: 0 0 .5rem 0 rgba(get-color('black'), .2);
+  display: flex;
+  flex: 0 0 25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 25rem;
+  padding: get-size('300') get-size('400');
+}

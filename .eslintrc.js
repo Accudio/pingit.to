@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended'
   ],
   rules: {
     indent: [2, 2],

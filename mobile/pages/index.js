@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import { usePeer, validUrl } from '@common'
+
+import Page from 'layouts/Default.js'
+
+import { ArrowRightIcon, ArrowLeftIcon } from '@common/components/Icons'
 
 import QRReader from 'components/QRReader.js'
 
@@ -12,6 +16,25 @@ const Send = () => {
   const [ remoteID, setRemoteID ] = useState(null)
   const [ sendUrl, setSendUrl ] = useState(null)
   const [ isUrlSet, setIsUrlSet ] = useState(false)
+  const [ hasReceivedUrl, setHasReceivedUrl ] = useState(false)
+
+  const receiveShare = useCallback(e => {
+    if (!hasReceivedUrl) {
+      const parsedUrl = new URL(window.location)
+
+      const url = parsedUrl.searchParams.get('url')
+      const text = parsedUrl.searchParams.get('text')
+      const title = parsedUrl.searchParams.get('title')
+
+      const actualUrl = validUrl(url) ? url : (validUrl(text) ? text : (validUrl(title) ? title : false))
+
+      if (actualUrl) {
+        setSendUrl(actualUrl)
+        setHasReceivedUrl(true)
+        setIsUrlSet(true)
+      }
+    }
+  }, [hasReceivedUrl, setSendUrl, setHasReceivedUrl, setIsUrlSet])
 
   const send = () => {
     console.debug('sending', sendUrl, 'to', remoteID)
@@ -25,6 +48,7 @@ const Send = () => {
       setRemoteID(null)
       setSendUrl(null)
       setIsUrlSet(false)
+      window.close()
     })
   }
 
@@ -35,8 +59,12 @@ const Send = () => {
     }
   }
 
+  useEffect(() => {
+    receiveShare()
+  })
+
   return (
-    <>
+    <Page>
       { !isUrlSet &&
         <form
           className={styles.form}
@@ -46,17 +74,23 @@ const Send = () => {
               setIsUrlSet(true)
             }
           }}>
-          <label htmlFor="url" className={styles.label}>Enter URL</label>
-          <input type="text" id="url" className={styles.input} value={sendUrl} onChange={e => setSendUrl(e.target.value)} />
-          <button type="submit">Send</button>
+          <label htmlFor="url" className={styles.label}>Enter URL to send</label>
+          <div className={styles.formgroup}>
+            <input type="url" id="url" className={styles.input} value={sendUrl} onChange={e => setSendUrl(e.target.value)} />
+            <button type="submit" className={`button ${styles.button}`}>
+              <ArrowRightIcon />
+              <span className="sr-text">Send</span>
+            </button>
+          </div>
         </form>
       }
       { isUrlSet &&
         <div className="qr">
           <button
-            className="qr__back"
+            className="button qr__back"
             onClick={() => setIsUrlSet(false)}>
-            Back
+            <ArrowLeftIcon />
+            <span className="sr-text">Back</span>
           </button>
           <QRReader
             onScan={qrScan}
@@ -64,7 +98,7 @@ const Send = () => {
           />
         </div>
       }
-    </>
+    </Page>
   )
 }
 

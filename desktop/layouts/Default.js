@@ -1,17 +1,28 @@
-import Header from 'components/Header.js'
+import Link from 'next/link'
 
-import styles from 'styles/layouts/default.module.scss'
+import Head from 'components/Head'
+import { XIcon } from '@common/components/Icons'
 
-const DefaultLayout = ({ children }) => {
+import styles from 'styles/layouts/all.module.scss'
+
+const DefaultLayout = ({ children, meta }) => {
   return (
-    <div className="layout layout--default">
-      <img src="https://source.unsplash.com/random/1920x1080?landscape" className="bg" alt="" width="1920" height="1080" loading="lazy" />
-      <Header />
-
-      <div className={styles.app}>
-        {children}
+    <>
+      <Head meta={meta} />
+      <div className={styles.body}>
+        <div className={`contain ${styles.contain}`}>
+          <main className={`flow ${styles.page}`}>
+            <Link href="/">
+              <a className={styles.close}>
+                <XIcon />
+                <span className="sr-text">Back to home</span>
+              </a>
+            </Link>
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

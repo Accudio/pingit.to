@@ -1,15 +1,13 @@
-import Nav from 'components/Nav.js'
+import Head from 'components/Head'
 
-import layoutStyles from 'styles/layouts/all.module.scss'
-
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ children, meta }) => {
   return (
-    <div className={layoutStyles.wrap}>
-      <main className="app">
+    <>
+      <Head meta={meta} />
+      <main className="app" aria-live="polite">
         {children}
       </main>
-      <Nav />
-    </div>
+    </>
   )
 }
 

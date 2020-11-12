@@ -1,0 +1,10 @@
+.icon {
+  height: 1em;
+  width: 1em;
+
+  &.inline {
+    bottom: -.15em;
+    margin-left: .5ch;
+    position: relative;
+  }
+}

@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export default function usePeer() {
   const [ myPeer, setPeer ] = useState(null)
   const [ myPeerID, setPeerID ] = useState(null)
 
-  const cleanup = () => {
+  const cleanup = useCallback(() => {
     if (myPeer) {
       myPeer.disconnect()
       myPeer.destroy()
     }
     setPeer(null)
     setPeerID(null)
-  }
+  }, [myPeer])
 
   useEffect(() => {
     import('peerjs').then(({ peerjs }) => {
@@ -48,7 +48,7 @@ export default function usePeer() {
         cleanup()
       })
     })
-  })
+  }, [myPeer, myPeerID, cleanup])
 
   return [ myPeer, myPeerID ]
 }

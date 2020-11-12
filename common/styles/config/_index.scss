@@ -1,0 +1,12 @@
+// import project-specific design tokens
+@import '../../../styles/tokens';
+
+// import configuration and functions and initialise gorko
+@import 'config';
+
+// initialise gorko
+$outputTokenCSS: false !default; // stylelint-disable-line scss/dollar-variable-pattern
+@import '../../../../node_modules/gorko/gorko';
+
+// functions
+@import 'functions';
