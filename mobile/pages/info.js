@@ -16,6 +16,4 @@ const Info = () => (
   </Page>
 )
 
-Info.layout = Layout
-
 export default Info

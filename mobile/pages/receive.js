@@ -1,10 +1,8 @@
 import { validUrl } from '@common'
 
-import Page from 'layouts/Content'
+import Page from 'layouts/Default'
 
 import QRReader from 'components/QRReader.js'
-
-// import styles from 'styles/pages/receive.module.scss'
 
 const REDIRECT = true
 
