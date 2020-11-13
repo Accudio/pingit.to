@@ -1,3 +1,4 @@
+import MobileBanner from 'components/sidebar/MobileBanner.js'
 import Search from 'components/sidebar/Search.js'
 import Time from 'components/sidebar/Time.js'
 import QRShare from 'components/sidebar/QRShare.js'
@@ -8,7 +9,8 @@ import styles from 'styles/components/sidebar.module.scss'
 
 export default function Sidebar() {
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`flow ${styles.sidebar}`}>
+      <MobileBanner />
       <Search />
       <Time />
       <QRShare />

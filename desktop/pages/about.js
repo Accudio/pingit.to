@@ -7,7 +7,6 @@ const About = () => (
     <h1>About Ping It To</h1>
     <p>Ping It To allows you to send URLs between a mobile and desktop device using QR codes. There is no need for an account and no unnecessary bells and whistles.</p>
     <p>We also include useful features including a search bar and clock, and also a stunning background image so Ping It To can function as a  great start page/new tab page replacement.</p>
-    <p>The <a href="https://github.com/Accudio/PingIt">source is available on GitHub</a> and you are welcome to fork, modify and even contribute back.</p>
 
     <h2 className="flow-space-900">About the Creator</h2>
     <p>Hi, I&apos;m <a href="https://alistairshepherd.uk/">Alistair Shepherd</a>, a frontend web developer from the Highlands of Scotland and currently living in Edinburgh.</p>

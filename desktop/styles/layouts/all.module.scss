@@ -3,7 +3,10 @@
 .body {
   height: 100%;
   overflow: auto;
-  position: relative;
+
+  @include min-width() {
+    position: relative;
+  }
 }
 
 .wrap {
@@ -13,11 +16,17 @@
   position: absolute;
   right: 0;
   top: 0;
+
+  @include max-width() {
+    display: block;
+  }
 }
 
 .main {
-  flex: 1 0 0;
-  position: relative;
+  @include min-width() {
+    flex: 1 0 0;
+    position: relative;
+  }
 }
 
 .contain {
@@ -25,6 +34,15 @@
   flex-direction: column;
   min-height: 100%;
   padding-top: get-size('major');
+
+  @include max-width() {
+    background: rgba(get-colour('black'), .75);
+    left: 0;
+    padding-top: get-size('600');
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .page {
@@ -34,6 +52,10 @@
   flex: 1 0 auto;
   padding: get-size('500') get-size('600') get-size('900');
   position: relative;
+
+  @include max-width() {
+    padding: 0 get-size('400') get-size('600');
+  }
 }
 
 .close {

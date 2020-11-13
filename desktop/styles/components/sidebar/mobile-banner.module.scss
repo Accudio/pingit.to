@@ -1,0 +1,14 @@
+@import '@common/styles/config';
+
+.wrap {
+  margin: -#{get-size('300')} -#{get-size('400')} 0;
+  padding: get-size('300') get-size('400');
+
+  a {
+    text-decoration-color: currentColor;
+  }
+
+  @include min-width() {
+    display: none;
+  }
+}

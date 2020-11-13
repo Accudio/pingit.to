@@ -7,6 +7,11 @@
   flex: 0 0 25rem;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 25rem;
+  max-width: 100%;
   padding: get-size('300') get-size('400');
+  width: 25rem;
+
+  @include max-width() {
+    box-shadow: none;
+  }
 }

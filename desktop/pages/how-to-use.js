@@ -19,7 +19,7 @@ const HowToUse = () => (
     <h2 className="flow-space-900">Desktop to Mobile</h2>
     <ol>
       <li>Click &quot;SEND&quot; on the left and type/paste the link into the input that appears</li>
-      <li>Scan the QR Code shown on your moble device with the <a href="https://m.pingit.to">Ping It To moble app</a> (installation instructions above)</li>
+      <li>Scan the QR Code shown on your moble device with the <a href="https://m.pingit.to">Ping It To mobile app</a> (installation instructions above)</li>
     </ol>
     <p>You can also use any other QR Code reader should you prefer using an alternate app.</p>
   </Page>
