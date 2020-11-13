@@ -5,6 +5,8 @@ import 'styles/global/global.scss'
 
 import styles from 'styles/layouts/all.module.scss'
 
+import { TrackingContextProvider, Tracking } from 'components/Tracking'
+
 import Nav from 'components/Nav.js'
 
 function MyApp({ Component, pageProps }) {
@@ -40,10 +42,13 @@ function MyApp({ Component, pageProps }) {
   }, [isOnline, router.route])
 
   return (
-    <div className={styles.wrap}>
-      <Component {...pageProps} />
-      <Nav />
-    </div>
+    <TrackingContextProvider>
+      <Tracking />
+      <div className={styles.wrap}>
+        <Component {...pageProps} />
+        <Nav />
+      </div>
+    </TrackingContextProvider>
   )
 }
 

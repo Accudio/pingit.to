@@ -27,12 +27,6 @@ export default function usePeer() {
         console.debug('Peer ID: ' + peer.id)
       })
 
-      peer.on('connection', (conn) => {
-        conn.on('data', (data) => {
-          console.log(data)
-        })
-      })
-
       peer.on('disconnected', () => {
         console.log('Peer disconnected')
         cleanup()

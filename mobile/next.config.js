@@ -6,6 +6,11 @@ const withPrefresh = require('@prefresh/next')
 const withPWA = require('next-pwa')
 
 const config = {
+  env: {
+    NEXT_PUBLIC_PEER_HOST: 's.pingit.to',
+    NEXT_PUBLIC_PEER_PORT: 443
+  },
+
   experimental: {
     modern: true,
     polyfillsOptimization: true

@@ -1,6 +1,9 @@
 .next
 node_modules
 
+# environment variable
+.env
+
 # builds
 /desktop/build
 /mobile/build

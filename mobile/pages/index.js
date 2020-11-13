@@ -1,6 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 
 import { usePeer, validUrl } from '@common'
+
+import { TrackingContext } from 'components/Tracking'
 
 import Page from 'layouts/Default.js'
 
@@ -11,6 +13,8 @@ import QRReader from 'components/QRReader.js'
 import styles from 'styles/pages/index.module.scss'
 
 const Send = () => {
+  const { state } = useContext(TrackingContext)
+
   const [ myPeer, myPeerID ] = usePeer()
 
   const [ remoteID, setRemoteID ] = useState(null)
@@ -45,6 +49,12 @@ const Send = () => {
         peer: myPeerID,
         url: sendUrl
       })
+
+      if (state.enabled && window.umami) {
+        console.debug('tracking event: qr sent')
+        window.umami('qr-sent')
+      }
+
       setRemoteID(null)
       setSendUrl(null)
       setIsUrlSet(false)

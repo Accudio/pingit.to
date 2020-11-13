@@ -1,4 +1,5 @@
 import Page from 'layouts/Content'
+import Link from 'next/link'
 
 const Info = () => (
   <Page>
@@ -9,7 +10,11 @@ const Info = () => (
     <h2 className="flow-space-600">Install</h2>
     <p>Using Google Chrome on Android you can install this app to your device and share URLs directly to it using the normal &apos;Share&apos; dialog! Simply tap the three dots in the top-right and tap &quot;Add to Home Screen&quot;. From any other app on your phone, select &quot;Share&quot; and tap Ping It To!</p>
     <h2 className="flow-space-900">Privacy</h2>
-    <p>Ping It To only tracks how many people visit our app or website and doesn&apos;t track or save any links you send. In actual fact it&apos;s built specifically so that&apos;s impossible! I (Alistair) became sick of solutions that required you to sign-up and hand over your data, tracked every link you sent, or were insecure so the whole world could see. The only thing we are able to see is how many people use the service and rough statistics on country of origin and screen size&mdash;and that&apos;s how it should be.</p>
+    <p>Ping It To only tracks how many people visit our app or website and doesn&apos;t track or save any links you send. In actual fact it&apos;s built specifically so that&apos;s impossible.</p>
+    <p>I (Alistair) became sick of solutions that required you to sign-up and hand over your data, tracked every link you sent, or were insecure so the whole world could see. The only thing we are able to see is how many people use the service and rough statistics on country of origin and screen size&mdash;and that&apos;s how it should be.</p>
+    <Link href="/privacy">
+      <a className="button">More info on Privacy</a>
+    </Link>
     <footer className="flow-space-900">
       Built by <a href="https://accudio.com">Alistair Shepherd</a>. Copyright 2020
     </footer>

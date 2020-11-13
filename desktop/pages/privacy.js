@@ -1,7 +1,7 @@
-import Page from 'layouts/Default.js'
 import { useContext } from 'react'
-
 import { TrackingContext } from 'components/Tracking'
+
+import Page from 'layouts/Default.js'
 
 const Privacy = () => {
   const { state, dispatch } = useContext(TrackingContext)
@@ -9,10 +9,10 @@ const Privacy = () => {
   const toggleAnalytics = () => {
     dispatch({ type: 'toggle' })
 
-    if (localStorage.getItem('PingIt_e')) {
-      localStorage.removeItem('PingIt_e')
+    if (localStorage.getItem('pingitto_e')) {
+      localStorage.removeItem('pingitto_e')
     } else {
-      localStorage.setItem('PingIt_e', true)
+      localStorage.setItem('pingitto_e', true)
     }
   }
 
