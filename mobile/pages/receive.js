@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 import { validUrl } from '@common'
 
@@ -13,8 +13,12 @@ const REDIRECT = true
 const Receive = () => {
   const { state } = useContext(TrackingContext)
 
+  const [ cooldown, setCooldown ] = useState(false)
+
   const qrScan = url => {
-    if (url && validUrl(url)) trigger(url)
+    if (!cooldown && url && validUrl(url)) {
+      trigger(url)
+    }
   }
 
   const trigger = url => {
@@ -22,6 +26,11 @@ const Receive = () => {
       console.debug('tracking event: qr received')
       window.umami('qr-received')
     }
+
+    setCooldown(true)
+    setTimeout(() => {
+      setCooldown(false)
+    }, 2000)
 
     if (REDIRECT) {
       window.open(url)

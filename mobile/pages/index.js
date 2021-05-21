@@ -58,6 +58,7 @@ const Send = () => {
       setRemoteID(null)
       setSendUrl(null)
       setIsUrlSet(false)
+      setHasReceivedUrl(false)
       window.close()
     })
   }
