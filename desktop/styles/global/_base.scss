@@ -9,7 +9,7 @@ html {
 body {
   color: get-color('dark');
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  font-size: get-size('500');
+  font-size: clamp(get-size('400'), 2vh, get-size('500'));
   line-height: 1.5;
 }
 

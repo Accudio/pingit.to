@@ -1,5 +1,7 @@
 import { useEffect, useCallback, useState } from 'react'
 
+import styles from 'styles/components/sidebar/time.module.scss'
+
 export default function Time() {
   const [ date, setDate ] = useState(null)
   const [ currTime, setCurrTime ] = useState(null)
@@ -29,7 +31,7 @@ export default function Time() {
 
   return (
     <time className="align-center leading-tight">
-      <div className="text-major weight-bold">{currTime}</div>
+      <div className={styles.time}>{currTime}</div>
       {date}
     </time>
   )

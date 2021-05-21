@@ -1,0 +1,7 @@
+@import '@common/styles/config';
+
+.time {
+  @include apply-utility('weight', 'bold');
+
+  font-size: clamp(1rem, 7vh, 5.6rem);
+}

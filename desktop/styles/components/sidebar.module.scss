@@ -1,6 +1,10 @@
 @import '@common/styles/config';
 
+$width: 25rem;
+$padding-x: get-size('400');
+
 .sidebar {
+  --sidebar-width: calc(min(#{$width}, 100vw) - #{$padding-x * 2});
   background: get-color('white');
   box-shadow: 0 0 .5rem 0 rgba(get-color('black'), .2);
   display: flex;
@@ -8,8 +12,8 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
-  padding: get-size('300') get-size('400');
-  width: 25rem;
+  padding: get-size('300') $padding-x;
+  width: $width;
 
   @include max-width() {
     box-shadow: none;
