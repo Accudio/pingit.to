@@ -7,6 +7,8 @@ node_modules
 # builds
 /desktop/build
 /mobile/build
+/chrome/build
+/chrome/build.zip
 
 # symlinks for common lib
 @common/
