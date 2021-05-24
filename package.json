@@ -1,5 +1,5 @@
 {
-  "name": "qr-share",
+  "name": "pingit-to",
   "version": "1.0.0",
   "description": "Web application allowing easy sending/receiving of URLs using QR Codes",
   "private": true,
