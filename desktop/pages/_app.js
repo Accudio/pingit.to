@@ -11,6 +11,7 @@ import Sidebar from 'components/Sidebar.js'
 
 function MyApp({ Component, pageProps }) {
   const [isOnline, setIsOnline] = useState(true)
+
   useEffect(() => {
     if (typeof window !== 'undefined' && 'ononline' in window && 'onoffline' in window) {
       setIsOnline(window.navigator.onLine)
@@ -24,6 +25,17 @@ function MyApp({ Component, pageProps }) {
           setIsOnline(false)
         })
       }
+    }
+  }, [])
+
+  // load extension service worker if applicable
+  useEffect(() => {
+    if (
+      process.env.MODE === 'extension' &&
+      'serviceWorker' in window.navigator
+    ) {
+      window.navigator.serviceWorker
+        .register('/extension-sw.js')
     }
   }, [])
 

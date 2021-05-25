@@ -9,8 +9,12 @@ const DOMAIN = 'https://www.pingit.to'
 const Head = ({ children, meta }) => {
   const router = useRouter()
 
-  const title = meta?.title || 'Ping It To - Share links between mobile and desktop'
+  let title = meta?.title || 'Ping It To - Share links between mobile and desktop'
   const description = meta?.description || 'Share links between mobile and desktop with no login using QR Codes!'
+
+  if (process.env.MODE === 'extension') {
+    title = 'New tab'
+  }
 
   return (
     <>

@@ -8,7 +8,8 @@ const withPWA = require('next-pwa')
 const config = {
   env: {
     NEXT_PUBLIC_PEER_HOST: 's.pingit.to',
-    NEXT_PUBLIC_PEER_PORT: 443
+    NEXT_PUBLIC_PEER_PORT: 443,
+    MODE: process.env.MODE ?? 'web'
   },
 
   experimental: {
@@ -80,7 +81,7 @@ module.exports = withPlugins([
   [withPWA, {
     pwa: {
       dest: 'public',
-      disable: process.env.NODE_ENV === 'development',
+      disable: process.env.NODE_ENV === 'development' || process.env.MODE === 'extension',
       runtimeCaching: [
         {
           urlPattern: '/',

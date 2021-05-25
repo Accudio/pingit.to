@@ -16,9 +16,9 @@ then
   exit 1
 fi
 
-# copy desktop build and manifest
+# copy desktop build and src files
 cp -r $desktop_build $build
-cp "$dir/manifest.json" $build
+cp -a "$dir/src/." $build
 
 # process for use as extension
 mv "$build/_next" "$build/next"

@@ -16,7 +16,7 @@
     "dev:mobile": "cd mobile && next -p 3001",
     "build:mobile": "cd mobile && next build && next export -o build",
     "start:mobile": "cd mobile && cross-env NODE_ENV=production next start",
-    "compile:chrome": "run-s build:desktop && ./chrome/build.sh",
+    "compile:chrome": "cross-env MODE=extension npm run build:desktop && ./chrome/build.sh",
     "dev": "run-p --print-label dev:*",
     "build": "run-p --print-label build:*",
     "start": "run-p --print-label start:*",
