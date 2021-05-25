@@ -16,7 +16,7 @@ const Info = () => (
       <a className="button">More info on Privacy</a>
     </Link>
     <footer className="flow-space-900">
-      Built by <a href="https://accudio.com">Alistair Shepherd</a>. Copyright 2020
+      Built by <a href="https://accudio.com">Alistair Shepherd</a>. Copyright 2021
     </footer>
   </Page>
 )
