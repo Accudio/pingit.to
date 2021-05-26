@@ -10,6 +10,11 @@ node_modules
 /chrome/*
 !/chrome/src
 !/chrome/build.sh
+/firefox/*
+!/firefox/src
+!/firefox/build.sh
+!/firefox/sign.js
+!/firefox/.env.example
 
 # symlinks for common lib
 @common/

@@ -6,7 +6,7 @@ build="$dir/build"
 
 # delete build directory and output
 rm -rf $build
-rm -f "$dir/build.zip"
+rm -f "$dir/build.xpi"
 
 # check desktop build exists
 desktop_build="$dir/../desktop/build"
@@ -31,4 +31,4 @@ else
 fi
 
 # zip into build.zip
-(cd $build; zip -r ../build.zip .)
+(cd $build; zip -r ../build.xpi .)
