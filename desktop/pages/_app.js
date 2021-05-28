@@ -8,6 +8,7 @@ import styles from 'styles/layouts/all.module.scss'
 import { TrackingContextProvider, Tracking } from 'components/Tracking'
 
 import Sidebar from 'components/Sidebar.js'
+import BgImage from 'components/BgImage.js'
 
 function MyApp({ Component, pageProps }) {
   const [isOnline, setIsOnline] = useState(true)
@@ -25,17 +26,6 @@ function MyApp({ Component, pageProps }) {
           setIsOnline(false)
         })
       }
-    }
-  }, [])
-
-  // load extension service worker if applicable
-  useEffect(() => {
-    if (
-      process.env.MODE === 'extension' &&
-      'serviceWorker' in window.navigator
-    ) {
-      window.navigator.serviceWorker
-        .register('/extension-sw.js')
     }
   }, [])
 
@@ -58,7 +48,12 @@ function MyApp({ Component, pageProps }) {
       <div className={styles.wrap}>
         <Sidebar />
         <div className={styles.main} aria-live="polite">
-          <img src="https://source.unsplash.com/collection/140375/1920x1080" className="bg" alt="" width="1920" height="1080" loading="lazy" />
+          { process.env.MODE === 'extension' &&
+            <BgImage />
+          }
+          { process.env.MODE !== 'extension' &&
+            <img src="https://source.unsplash.com/collection/140375/1920x1080" className="bg" alt="" width="1920" height="1080" loading="lazy" />
+          }
           <Component {...pageProps} />
         </div>
       </div>

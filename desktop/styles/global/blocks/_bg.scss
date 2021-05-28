@@ -5,9 +5,20 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: -1;
 
   @media screen and (max-width: 25rem) {
     display: none;
   }
+}
+
+.bg-credit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: get-size('300');
+  padding: .25rem .75rem;
+  background: get-color('white');
+  border-bottom-left-radius: .5rem;
+  color: currentColor;
+  z-index: 1;
 }
