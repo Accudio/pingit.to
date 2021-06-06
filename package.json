@@ -2,9 +2,10 @@
   "name": "pingit-to",
   "version": "1.0.0",
   "description": "Web application allowing easy sending/receiving of URLs using QR Codes",
-  "private": true,
+  "homepage": "https://pingit.to/",
   "author": "Alistair Shepherd <alistair@accudio.com>",
-  "license": "UNLICENSED",
+  "repository": "github:accudio/pingit.to",
+  "license": "MPL-2.0",
   "scripts": {
     "postinstall": "run-p symlink",
     "symlink": "run-p symlink:*",
