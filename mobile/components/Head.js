@@ -5,7 +5,7 @@ import GoogleFonts from 'next-google-fonts'
 
 const APPNAME = 'Ping It To'
 const DOMAIN = 'https://m.pingit.to'
-const MONETSIE = '$ilp.uphold.com/EYBHKJjWP8Fq'
+const MONETISE = '$ilp.uphold.com/EYBHKJjWP8Fq'
 
 const Head = ({ children, meta }) => {
   const router = useRouter()
