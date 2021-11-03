@@ -58,7 +58,7 @@ const Head = ({ children, meta }) => {
         <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
         <meta property="og:image" content={`${DOMAIN}/icons/apple-touch-icon.png`} />
         
-        <meta name="monetization" content={MONETISE}>
+        <meta name="monetization" content={MONETISE} />
 
         {children}
       </NextHead>
