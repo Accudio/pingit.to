@@ -5,6 +5,7 @@ import GoogleFonts from 'next-google-fonts'
 
 const APPNAME = 'Ping It To'
 const DOMAIN = 'https://m.pingit.to'
+const MONETSIE = '$ilp.uphold.com/EYBHKJjWP8Fq'
 
 const Head = ({ children, meta }) => {
   const router = useRouter()
@@ -52,6 +53,8 @@ const Head = ({ children, meta }) => {
         <meta property="og:site_name" content={APPNAME} />
         <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
         <meta property="og:image" content={`${DOMAIN}/icons/apple-touch-icon.png`} />
+        
+        <meta name="monetization" content={MONETISE}>
 
         {children}
       </NextHead>
